@@ -17,6 +17,7 @@ CREATE TABLE `tl_map_locations` (
   `tstamp` int(10) unsigned NOT NULL default '0',
   `headline` varchar(255) NOT NULL default '',
   `text` mediumtext NULL,
+  `url` varchar(255) NOT NULL default '',
   `mapLocation` varchar(9) NOT NULL default '',
   `addImage` char(1) NOT NULL default '',
   `singleSRC` varchar(255) NOT NULL default '',

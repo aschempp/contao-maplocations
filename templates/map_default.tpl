@@ -1,49 +1,18 @@
-<script type="text/javascript">
-<!--//--><![CDATA[//><!--
 
-	var posdesc_timer;
-	var active_posdesc;
-
-	function show_posdesc(id)
-	{
-		if (active_posdesc) hide_posdesc();
-		active_posdesc = id;
-		document.getElementById(id).style.display='block';
-	}
-	
-	function hide_posdesc()
-	{
-		stop_posdesc();
-		document.getElementById(active_posdesc).style.display='none';
-	}
-	
-	function fire_posdesc(id)
-	{
-		posdesc_timer = window.setTimeout(hide_posdesc, 1000);
-	}
-	
-	function stop_posdesc()
-	{
-		window.clearTimeout(posdesc_timer);
-	}
-
-//--><!]]>
-</script>
-
-
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 <?php if ($this->headline): ?>
+
 <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
 <?php endif; ?>
 
-<div <?php if($this->cssID) echo $this->cssID; ?> class="<?php echo $this->class; ?>" style="position: relative">
+<div id="map<?php echo $this->id; ?>" style="position:relative">
 <?php foreach($this->locations as $location): ?>
 <?php $coords = split(',', $location['mapLocation']); ?>
 	<div class="mappin pos_<?php echo $location['id']; ?>" style="position: absolute; z-index: 20; left: <?php echo $coords[0]; ?>px; top: <?php echo $coords[1]; ?>px">
-		<img src="<?php echo $location['customPin'] ? $location['pinSRC'] : $this->pinSRC; ?>" alt="<?php echo $this->pinLabel; ?>" onmouseover="show_posdesc('posdesc_<?php echo $location['id']; ?>')" onmouseout="fire_posdesc()" />
+		<?php if($location['url']): ?><a href="<?php echo $location['url']; ?>"><?php endif; ?><img src="<?php echo $location['customPin'] ? $location['pinSRC'] : $this->pinSRC; ?>" alt="<?php echo $this->pinLabel; ?>" onmouseover="map<?php echo $this->id; ?>.show_posdesc('posdesc_<?php echo $location['id']; ?>')" /><?php if($location['url']): ?></a><?php endif; ?>
 	</div>
 	<div class="mapdescription pos_<?php echo $location['id']; ?>" style="position: absolute; z-index: 60; left: <?php echo $coords[0]+10; ?>px; top: <?php echo $coords[1]+15; ?>px">
-		<div id="posdesc_<?php echo $location['id']; ?>" class="location_description<?php if($location['addImage']) echo ' has_image'; ?>" style="display: none; position: absolute; z-index: 10" onmouseover="stop_posdesc()" onmouseout="fire_posdesc()">
-
+		<div id="posdesc_<?php echo $location['id']; ?>" class="location_description<?php if($location['addImage']) echo ' has_image'; ?>" style="display: none; position: absolute; z-index: 10">
 
 			<?php if($location['addImage'] && $location['addBefore']): ?>		
 			<div class="image_container"<?php if ($location['margin'] || $location['float']): ?> style="<?php echo $location['margin'].$location['float']; ?>"<?php endif; ?>>
@@ -78,3 +47,14 @@
 	
 	<div class="image_container"><img src="<?php echo $this->mapImage; ?>" alt="<?php echo $this->description; ?>" title="<?php echo $this->title; ?>" /></div>
 </div>
+
+</div>
+
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var map<?php echo $this->id; ?>
+window.addEvent('domready', function() {
+	map<?php echo $this->id; ?> = new MapLocations('map<?php echo $this->id; ?>');
+});
+//--><!]]>
+</script>

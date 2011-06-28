@@ -120,7 +120,9 @@ class ModuleMapLocations extends Module
 			$this->Template->locations = array();
 		
 		$this->Template->pinLabel = $GLOBALS['TL_LANG']['MSC']['label_pin'];
+		$this->Template->id = $this->id;
 		
+		$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/maplocations/html/maplocations.js';
 	}
 }
 

@@ -32,6 +32,7 @@
 $GLOBALS['TL_LANG']['tl_map_locations']['headline']     = array('Überschrift', 'Bitte geben Sie die Überschrift der Position ein.');
 $GLOBALS['TL_LANG']['tl_map_locations']['text']         = array('Positionsbeschreibung', 'Bitte geben Sie eine Beschreibung für die Position ein.');
 $GLOBALS['TL_LANG']['tl_map_locations']['mapLocation']     = array('Position festlegen', 'Klicken Sie auf der Landkarte auf die Position, an der die Stecknadel gesetzt werden soll.');
+$GLOBALS['TL_LANG']['tl_map_locations']['url']			= array('Link für Pin', 'Geben Sie eine URL ein, um den Pin mit einer Aktion zu versehen.');
 $GLOBALS['TL_LANG']['tl_map_locations']['addImage']     = array('Ein Bild hinzufügen', 'Wenn Sie diese Option wählen, wird der Positionsbeschreibung ein Bild hinzugefügt.');
 $GLOBALS['TL_LANG']['tl_map_locations']['floating']    = array('Bildausrichtung', 'Bitte wählen Sie die Ausrichtung des Bildes. Ein Bild kann oberhalb des Textes oder auf der oberen linken oder rechten Seite des Textes angezeigt werden.');
 $GLOBALS['TL_LANG']['tl_map_locations']['imagemargin'] = array('Bildabstand', 'Bitte geben Sie den oberen, rechten, unteren und linken Bildabstand sowie die Einheit ein. Der Bildabstand ist der Abstand zwischen einem Bild und seinen benachbarten Elementen.');

@@ -1,13 +1,15 @@
 <?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
 
 /**
- * TYPOlight webCMS
- * Copyright (C) 2005-2009 Leo Feyer
+ * Contao Open Source CMS
+ * Copyright (C) 2005-2010 Leo Feyer
+ *
+ * Formerly known as TYPOlight Open Source CMS.
  *
  * This program is free software: you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation, either
- * version 2.1 of the License, or (at your option) any later version.
+ * version 3 of the License, or (at your option) any later version.
  * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,10 +18,10 @@
  * 
  * You should have received a copy of the GNU Lesser General Public
  * License along with this program. If not, please visit the Free
- * Software Foundation website at http://www.gnu.org/licenses/.
+ * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
- * @copyright  Andreas Schempp 2009
+ * @copyright  Andreas Schempp 2009-2011
  * @author     Andreas Schempp <andreas@schempp.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  * @version    $Id$
@@ -31,6 +33,7 @@
  */
 $GLOBALS['TL_LANG']['tl_map_locations']['headline']			= array('Headline', 'Please enter the headline of the map.');
 $GLOBALS['TL_LANG']['tl_map_locations']['text']				= array('Location description', 'Please enter e description for this location.');
+$GLOBALS['TL_LANG']['tl_map_locations']['url']				= array('Link for Pin', 'Assign an url to add an action to the pin.');
 $GLOBALS['TL_LANG']['tl_map_locations']['mapLocation']		= array('Set location', 'Click the location on your map image where this pin should be displayed.');
 $GLOBALS['TL_LANG']['tl_map_locations']['addImage']			= array('Add an image', 'If you choose this option, an image will be added to the location description.');
 $GLOBALS['TL_LANG']['tl_map_locations']['floating']			= array('Image alignment', 'Please choose the image alignment. An image can be displayed above or on the top left or top right side of the text.');
@@ -57,4 +60,15 @@ $GLOBALS['TL_LANG']['tl_map_locations']['copy']			= array('Copy location', 'Copy
 $GLOBALS['TL_LANG']['tl_map_locations']['delete']		= array('Delete location', 'Delete location ID %s');
 $GLOBALS['TL_LANG']['tl_map_locations']['show']			= array('Location details', 'Show details of location ID %s');
 $GLOBALS['TL_LANG']['tl_map_locations']['editheader']	= array('Edit map', 'Edit this map');
+
+
+/**
+ * Legends
+ */
+$GLOBALS['TL_LANG']['tl_map_locations']['content_legend']	= 'Position content';
+$GLOBALS['TL_LANG']['tl_map_locations']['location_legend']	= 'Location';
+$GLOBALS['TL_LANG']['tl_map_locations']['image_legend']		= 'Image';
+$GLOBALS['TL_LANG']['tl_map_locations']['address_legend']	= 'Address';
+$GLOBALS['TL_LANG']['tl_map_locations']['pin_legend']		= 'Custom pin';
+$GLOBALS['TL_LANG']['tl_map_locations']['publish_legend']	= 'Publishing settings';
 
