@@ -52,7 +52,7 @@
 
 <script type="text/javascript">
 <!--//--><![CDATA[//><!--
-var map<?php echo $this->id; ?>
+var map<?php echo $this->id; ?>;
 window.addEvent('domready', function() {
 	map<?php echo $this->id; ?> = new MapLocations('map<?php echo $this->id; ?>');
 });
