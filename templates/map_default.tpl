@@ -7,7 +7,7 @@
 
 <div id="map<?php echo $this->id; ?>" style="position:relative">
 <?php foreach($this->locations as $location): ?>
-<?php $coords = split(',', $location['mapLocation']); ?>
+<?php $coords = explode(',', $location['mapLocation']); ?>
 	<div class="mappin pos_<?php echo $location['id']; ?>" style="position: absolute; z-index: 20; left: <?php echo $coords[0]; ?>px; top: <?php echo $coords[1]; ?>px">
 		<?php if($location['url']): ?><a href="<?php echo $location['url']; ?>"><?php endif; ?><img src="<?php echo $location['customPin'] ? $location['pinSRC'] : $this->pinSRC; ?>" alt="<?php echo $this->pinLabel; ?>" onmouseover="map<?php echo $this->id; ?>.show_posdesc('posdesc_<?php echo $location['id']; ?>')" /><?php if($location['url']): ?></a><?php endif; ?>
 	</div>
